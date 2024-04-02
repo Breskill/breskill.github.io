@@ -1,0 +1,124 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+    header{
+        background: #008DDA;
+        display: flex;
+        align-items: center;
+        flex-flow: nowrap;
+        
+    }
+    
+        img{
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+            
+        }
+        h1{             
+            color: #F1EEDC;
+            font-size: 65px;
+        }
+    
+    nav{
+        background: url(Imagenes/Faro.jpg);
+        size-adjust: 100%;
+    }
+    .menu{
+        background: rgba(0, 0, 0, 0.459);        
+        display: flex;
+        flex-flow: row nowrap;
+        height: 60px;
+        align-items: center;
+        padding-left: 30px;
+        
+    }
+    .menu a{
+        color: #F1EEDC;
+        text-decoration: none;
+        font-size: 14px;
+        text-transform: uppercase;
+        padding: 0 10px;
+        letter-spacing: 5px;
+    }
+    .menu a:hover{
+        color: #73738d;
+    }
+    .titulo{
+        display: flex;
+        margin-left: 100px;
+        margin-top: 15px;
+        font-size: 50px;
+        border-bottom: 1px solid #00224D;
+              
+    }    
+        .articulos{
+            display: flex;            
+            flex-direction: row;
+            flex-wrap: wrap;                      
+            flex: 1 1 auto;
+            width: 98%;
+            margin: 20px;
+            padding: 5px;
+            }
+            .article{
+                
+                width: 650px;
+                height: 600px;
+                width: 40%;
+                color: rgb(0, 0, 0);
+                flex: 1 1 auto;
+                align-items: flex-start;
+            }
+            .article img{                
+                width: 630px;
+                height: auto;
+                margin: 10px;
+                padding: 10px;
+                border-radius: 10px;
+                
+            }
+            .h2video{
+                color: #000000;
+                margin-top: -50px;
+                margin-left: 25px;
+            }
+            .h2audio{
+                color: #000000;
+                margin-top: 10px;
+            }       
+            h2{
+                color: #fff;                                
+                margin-top: -50px;
+                margin-left: 25px;                
+            }
+            h4{                
+                color: #000000;
+                margin: 10px;
+            }
+            p{
+                width: 80%;
+                margin: 10px;
+            }
+            video {
+                width: 700px;
+                height: auto;
+                margin: 15px 15px 30px 15px;
+                padding: 15px;
+            }
+            audio{                
+                width: 70%;                
+                margin-top: -200px;                
+            }
+                        
+            
+    .deportes{
+        background: #008eda33;
+    }
+    
