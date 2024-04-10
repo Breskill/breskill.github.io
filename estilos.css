@@ -4,10 +4,10 @@
     box-sizing:border-box;
 }
 body{
-    font-family: "Mate", serif;
+    font-family: "Mate", serif;/*Fuente del cuerpo completo*/
 }
 
-    header{
+    header{/*Encabezado, con su color de fondo y configuracion de como se visualizara*/
         background: #008DDA;
         display: flex;
         align-items: center;
@@ -15,20 +15,20 @@ body{
         
     }
     
-        img{
+        img{/*Logotipo*/
             width: 100px;
             height: auto;
             margin-right: 10px;
             
         }
-        h1{      
+        h1{/*Isotipo*/
             font-family:Arial;  
             color: #F1EEDC;
             font-size: 65px;
         }
     
-    nav{
-        background: url(Imagenes/Faro.jpg);
+    nav{/*Menu de navegacion*/
+        background: url(Imagenes/Faro.jpg);/*Franja extraida de una imagen en donde estaran los botones "inicio-deportes-negocios"*/
         size-adjust: 100%;
     }
     .menu{
@@ -40,15 +40,15 @@ body{
         padding-left: 30px;
         
     }
-    .menu a{
+    .menu a{/*botones "inicio-deportes-negocios"*/
         color: #F1EEDC;
-        text-decoration: none;
+        text-decoration: none;/*quitar el subrayado*/
         font-size: 14px;
         text-transform: uppercase;
         padding: 0 10px;
         letter-spacing: 5px;
     }
-    .menu a:hover{
+    .menu a:hover{/*Cambo de color cuando el mouse pase por los botones*/
         color: #73738d;
     }
     .noticias{
@@ -68,7 +68,7 @@ body{
         border-bottom: 1px solid #00224D;
               
     }    
-        .articulos{
+        .articulos{/*Configuracion de caja donde estaran los articulos*/
             background: #f5f5f5;
             display: flex;            
             flex-direction: row;
@@ -79,7 +79,7 @@ body{
             
             
             }
-            .fondo{
+            .fondo{/*se creo esta caja intermedia para cada articulo asi poder mantener el fondo blanco*/
                 display: flex;            
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -95,10 +95,10 @@ body{
                 box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
             }
             .fondo:hover{
-                background-color: black;
+                background-color: black;/*Cambia el fondo del articulo cuando para el mouse por encima*/
             }
             
-            .article{  
+            .article{  /*Configracion de cada articulo*/
                 display: flex;            
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -110,7 +110,7 @@ body{
                 margin: 10px;
                 border-radius: 10px;
             }
-            .article img{                
+            .article img{/*parametros de altura ancho y borde redondeado cada imagen de los articulos*/           
                 width: 450px;
                 height: auto;                
                 border-radius: 10px;            
@@ -126,13 +126,13 @@ body{
                 transition: font-weight 0.3s ease;
                 
             }
-            .article a:hover{
+            .article a:hover{/*Cambios cuando se pasa sobre el articulo*/
                 
-                color: #ffffff;
-                font-weight: bold;
-                text-decoration: none;
+                color: #ffffff;/*Letras cambian a color blanco*/
+                font-weight: bold;/*Letras cambian a negrita*/
+                text-decoration: none;/*se quita el subrayado*/
             }
-            .h2audio{
+            .h2audio{/*Cargen de audio*/
                 margin-top: 10px;
             }      
             
@@ -142,7 +142,7 @@ body{
             p{                
                 margin: 10px;
             }
-            video {
+            video {/*Tamaño de el video ubicacion y bordes redondeados*/
                 justify-content: space-around; 
                 width: 450px;
                 height: auto; 
@@ -151,7 +151,7 @@ body{
             audio{                
                 width: 70%;                
             }
-    footer{
+    footer{/*Color de fondo y fuente segun los solicitados*/
         background: #c9d2d0;
         color: #31231e;  
         width: auto;
@@ -165,6 +165,8 @@ body{
         font-size: 18px;
         font-family: Arial, Helvetica, sans-serif;
     }
+
+    /*Configuraciones sitio responsivo*/
     @media (max-width: 1200px) {
         .articulos {
             flex-wrap: nowrap;
