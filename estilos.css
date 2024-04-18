@@ -73,9 +73,9 @@ body{
     
     .titulo{
         display: flex;
-        margin-left: 100px;
+        margin-left: 80px;
         margin-top: 15px;
-        font-size: 50px;
+        font-size: 40px;
         border-bottom: 1px solid #00224D;
               
     }    
