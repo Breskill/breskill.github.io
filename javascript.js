@@ -24,7 +24,6 @@ document.getElementById("fecha-hora").innerText = "Fecha: " + fecha + " - Hora: 
         actualizarFechaHora();
 
 
-
 // Cuando el usuario envía el formulario
 formulario.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -34,6 +33,7 @@ formulario.addEventListener('submit', function(event) {
     var titulo = document.getElementById('titulo').value;
     var categoria = document.getElementById('categoria').value;
     var descripcion = document.getElementById('descripcion').value;
+    var seccion = document.getElementById('seccion').value; // Obtener la sección seleccionada
 
     if (imagenInput) {
         var reader = new FileReader();
@@ -55,8 +55,9 @@ formulario.addEventListener('submit', function(event) {
                 </article>
             `;
 
-            // Agregar el nuevo artículo a la sección de negocios
-            document.getElementById("articulo-negocio").appendChild(nuevoArticulo);
+            // Determinar la sección donde se agregará el nuevo artículo
+            var seccionContenedor = document.getElementById("articulo-" + seccion);
+            seccionContenedor.appendChild(nuevoArticulo);
 
             // Limpiar el formulario y cerrar el modal
             formulario.reset();
@@ -67,3 +68,4 @@ formulario.addEventListener('submit', function(event) {
         reader.readAsDataURL(imagenInput);
     }
 });
+        
