@@ -23,6 +23,43 @@ document.getElementById("fecha-hora").innerText = "Fecha: " + fecha + " - Hora: 
         // Llama a la función para iniciar la actualización
         actualizarFechaHora();
 
+        
+// Función para contar en tiempo real la cantidad de elementos con la clase "fondo" dentro de la sección de noticias
+function contarArticulosNoticias() {
+    var contadorNoticias = document.getElementById('contador-noticias');
+    var articulosNoticias = document.querySelectorAll('.noticias .fondo').length;
+    contadorNoticias.textContent = articulosNoticias;
+}
+
+// Función para contar en tiempo real la cantidad de elementos con la clase "fondo" dentro de la sección de deportes
+function contarArticulosDeportes() {
+    var contadorDeportes = document.getElementById('contador-deportes');
+    var articulosDeportes = document.querySelectorAll('.deportes .fondo').length;
+    contadorDeportes.textContent = articulosDeportes;
+}
+
+// Función para contar en tiempo real la cantidad de elementos con la clase "fondo" dentro de la sección de negocios
+function contarArticulosNegocios() {
+    var contadorNegocios = document.getElementById('contador-negocios');
+    var articulosNegocios = document.querySelectorAll('.negocios .fondo').length;
+    contadorNegocios.textContent = articulosNegocios;
+}
+
+// Llamar a las funciones para contar los artículos cuando se cargue la página
+document.addEventListener('DOMContentLoaded', function() {
+    contarArticulosNoticias();
+    contarArticulosDeportes();
+    contarArticulosNegocios();
+});
+
+// Actualizar el contador cada 3 segundos
+setInterval(function() {
+    contarArticulosNoticias();
+    contarArticulosDeportes();
+    contarArticulosNegocios();
+}, 3000);
+
+
 
 // Cuando el usuario envía el formulario
 formulario.addEventListener('submit', function(event) {
@@ -68,4 +105,4 @@ formulario.addEventListener('submit', function(event) {
         reader.readAsDataURL(imagenInput);
     }
 });
-        
+    

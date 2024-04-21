@@ -29,6 +29,7 @@
         <Section class="noticias"><!--Secion de noticias-->
             <div class="titulo">
                 <h3>Noticias</h3>
+                    
             </div>
                 <div id="articulo-noticia" class="articulos">
                     <div class="fondo">
@@ -80,6 +81,8 @@
                             </article>
                     </div>
                 </div>
+                <!-- Contador de noticias -->
+                <p>Artículos: <span id="contador-noticias">0</span></p>    
         </Section>
         <Section class="deportes"><!--Seccion de deportes-->
             <div class="titulo">
@@ -127,11 +130,13 @@
                         </article>
                     </div>
                 </div>
+                <!-- Contador de deportes -->
+                <p>Artículos: <span id="contador-deportes">0</span></p> 
         </Section>
 
         <Section class="negocios"><!--Seccio de negocios-->
             <div class="titulo">
-                <h3>Negocios</h3>
+                <h3>Negocios</h3>                
                 </div>
                 <div id="articulo-negocio" class="articulos">
                     <div class="fondo">
@@ -173,8 +178,10 @@
                         <p>Ellas participarán de la etapa de formación del Programa Reactiva Mujer, 60 de las cuales serán seleccionadas para la etapa de asesoramiento y generación de un plan de mejoras para sus negocios.</p>
                         </a>
                     </article>                
-                </div>                
-            </div>                  
+                    </div>                
+                </div>
+                <!-- Contador de negocios -->
+                <p>Artículos: <span id="contador-negocios">0</span></p>                 
         </Section>
         
         <section class="crear">
@@ -237,9 +244,7 @@
                 cerrarModal.addEventListener('click', function() {
                     modal.style.display = 'none';
                 });           
-                
-            </script>            
-               
+            </script>
     <script src="javascript.js"></script>
 </body>
 </html>
