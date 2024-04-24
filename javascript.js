@@ -61,6 +61,10 @@ setInterval(function() {
 
 
 
+// Obtener el formulario y el modal
+var formulario = document.getElementById('formulario-articulo');
+var modalAgregarArticulo = new bootstrap.Modal(document.getElementById('modalAgregarArticulo'));
+
 // Cuando el usuario envía el formulario
 formulario.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -80,29 +84,83 @@ formulario.addEventListener('submit', function(event) {
 
             // Crear el nuevo artículo
             var nuevoArticulo = document.createElement('div');
-            nuevoArticulo.classList.add('fondo');
+            nuevoArticulo.classList.add('col');
             nuevoArticulo.innerHTML = `
-                <article class="article">
-                    <a href="#">
-                        <img src="${imagenURL}" alt="${titulo}">
-                        <h2>${titulo}</h2>
-                        <h4>${categoria}</h4>
-                        <p>${descripcion}</p>
-                    </a>
-                </article>
+                <div class="fondo card h-100">
+                    <article class="card h-100 shadow bg-body-tertiary rounded">
+                        <a href="#" class="text-decoration-none">                    
+                            <img src="${imagenURL}" class="card-img-top" alt="${titulo}">
+                            <div class="card-body">
+                                <h2 class="card-title text-black">${titulo}</h2>
+                                <h4 class="fs-4 fw-lighter text-body-tertiary">${categoria}</h4>
+                                <p class="card-text text-black">${descripcion}</p>
+                            </div>
+                        </a>
+                    </article>
+                </div>
             `;
 
             // Determinar la sección donde se agregará el nuevo artículo
             var seccionContenedor = document.getElementById("articulo-" + seccion);
-            seccionContenedor.appendChild(nuevoArticulo);
+            var articuloContenedor = seccionContenedor.querySelector(".row-cols-1");
+
+            // Si no hay un contenedor de artículos para la sección, créalo
+            if (!articuloContenedor) {
+                articuloContenedor = document.createElement("div");
+                articuloContenedor.classList.add("row");
+                articuloContenedor.classList.add("row-cols-1");
+                seccionContenedor.appendChild(articuloContenedor);
+            }
+
+            // Agregar el nuevo artículo al contenedor
+            articuloContenedor.appendChild(nuevoArticulo);
 
             // Limpiar el formulario y cerrar el modal
             formulario.reset();
-            modal.style.display = 'none';
+            modalAgregarArticulo.hide();
         };
 
         // Leer la imagen como una URL
         reader.readAsDataURL(imagenInput);
     }
 });
-    
+
+//Envío de mensaje    
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el formulario y agregar un evento de submit
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        // Prevenir el envío del formulario
+        event.preventDefault();
+        
+        // Mostrar el pop-up
+        var myModal = new bootstrap.Modal(document.getElementById('popup'));
+        myModal.show();
+        
+        // Redirigir al usuario al inicio de la página después de 2 segundos
+        setTimeout(function() {
+            window.location.href = '#'; // Redirigir al inicio de la página
+        }, 2000); // 2000 milisegundos = 2 segundos
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el formulario y agregar un evento de submit
+    var formContacto = document.getElementById('formulario-contacto');
+    formContacto.addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar el envío por defecto del formulario
+        
+        // Limpiar los campos de nombre y mensaje
+        document.getElementById('nombre').value = '';
+        document.getElementById('mensaje').value = '';
+        
+        // Mostrar el pop-up de mensaje enviado
+        var popupEnviado = new bootstrap.Modal(document.getElementById('popup-enviado'));
+        popupEnviado.show();
+        
+        // Redirigir al usuario al inicio de la página después de 2 segundos
+        setTimeout(function() {
+            window.location.href = '#'; // Redirigir al inicio de la página
+        }, 2000); // 2000 milisegundos = 2 segundos
+    });
+});
