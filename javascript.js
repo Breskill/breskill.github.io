@@ -60,7 +60,6 @@ setInterval(function() {
 }, 3000);
 
 
-
 // Obtener el formulario y el modal
 var formulario = document.getElementById('formulario-articulo');
 var modalAgregarArticulo = new bootstrap.Modal(document.getElementById('modalAgregarArticulo'));
