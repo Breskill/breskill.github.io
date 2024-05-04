@@ -22,45 +22,19 @@ document.getElementById("fecha-hora").innerText = "Fecha: " + fecha + " - Hora: 
         }
         // Llama a la función para iniciar la actualización
         actualizarFechaHora();
-
         
 // Función para contar en tiempo real la cantidad de elementos con la clase "fondo" dentro de la sección de noticias
 function contarArticulosNoticias() {
     var contadorNoticias = document.getElementById('contador-noticias');
-    var articulosNoticias = document.querySelectorAll('.noticias .fondo').length;
-    contadorNoticias.textContent = articulosNoticias;
+    console.log("Contador de noticias: ", contadorNoticias); // Verifica si el contador de noticias se está seleccionando correctamente
+    var articulosNoticias = document.querySelectorAll('.noticias .fondo');
+    console.log("Artículos de noticias: ", articulosNoticias); // Verifica si los artículos de noticias se están seleccionando correctamente
+    contadorNoticias.textContent = articulosNoticias.length;
 }
 
-// Función para contar en tiempo real la cantidad de elementos con la clase "fondo" dentro de la sección de deportes
-function contarArticulosDeportes() {
-    var contadorDeportes = document.getElementById('contador-deportes');
-    var articulosDeportes = document.querySelectorAll('.deportes .fondo').length;
-    contadorDeportes.textContent = articulosDeportes;
-}
-
-// Función para contar en tiempo real la cantidad de elementos con la clase "fondo" dentro de la sección de negocios
-function contarArticulosNegocios() {
-    var contadorNegocios = document.getElementById('contador-negocios');
-    var articulosNegocios = document.querySelectorAll('.negocios .fondo').length;
-    contadorNegocios.textContent = articulosNegocios;
-}
-
-// Llamar a las funciones para contar los artículos cuando se cargue la página
-document.addEventListener('DOMContentLoaded', function() {
-    contarArticulosNoticias();
-    contarArticulosDeportes();
-    contarArticulosNegocios();
-});
-
-// Actualizar el contador cada 3 segundos
-setInterval(function() {
-    contarArticulosNoticias();
-    contarArticulosDeportes();
-    contarArticulosNegocios();
-}, 3000);
 
 
-// Obtener el formulario y el modal
+/*// Obtener el formulario y el modal
 var formulario = document.getElementById('formulario-articulo');
 var modalAgregarArticulo = new bootstrap.Modal(document.getElementById('modalAgregarArticulo'));
 
@@ -122,7 +96,7 @@ formulario.addEventListener('submit', function(event) {
         // Leer la imagen como una URL
         reader.readAsDataURL(imagenInput);
     }
-});
+});*/
 
 //Envío de mensaje    
 document.addEventListener('DOMContentLoaded', function() {
@@ -149,8 +123,9 @@ document.addEventListener('DOMContentLoaded', function() {
     formContacto.addEventListener('submit', function(event) {
         event.preventDefault(); // Evitar el envío por defecto del formulario
         
-        // Limpiar los campos de nombre y mensaje
+        // Limpiar los campos de nombre, correo electrónico y mensaje
         document.getElementById('nombre').value = '';
+        document.getElementById('email').value = ''; // Corregir aquí el id del campo de correo electrónico
         document.getElementById('mensaje').value = '';
         
         // Mostrar el pop-up de mensaje enviado
