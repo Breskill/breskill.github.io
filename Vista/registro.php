@@ -50,28 +50,54 @@
                 <div class="col-md-6">                    
                     <div class="container shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                         <h2>Registrarse</h2>
-                        <form action="procesar_registro.php" method="post">                            
+                        <form action="../Controlador/procesar_registro.php" method="post">                            
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="username" placeholder="username" name="username" required>
-                                <label for="username">Nombre de usuario</label>                               
+                                <input type="text" class="form-control" id="nombre" placeholder="nombre" name="nombre" required>
+                                <label for="nombre">Nombre de usuario</label>                               
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="correo" class="form-control" id="correo" placeholder="name@example.com" name="correo" required>
+                                <input type="email" class="form-control" id="correo" placeholder="name@example.com" name="correo" required>
                                 <label for="correo">Correo electronico</label>                                
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="password" placeholder="password" name="password" required>
-                                <label for="password">Contraseña</label>                                
+                                <input type="password" class="form-control" id="contraseña" placeholder="contraseña" name="contraseña" required>
+                                <label for="contraseña">Contraseña</label>                                
                             </div>
-
-                                <button type="submit" class="btn btn-primary btn-block mt-3">Continuar</button>
+                        
+                                <button type="submit" class="btn btn-primary btn-block mt-3" name="registro">Registrarse</button>
                                                        
                         </form>
                     </div>
                 </div>
             </div>
-        </section>
-    <script src="../javascript.js"></script>
+        </section>    
+    <script>
+        // Función para actualizar la fecha y hora cada segundo
+        function actualizarFechaHora() {
+            var ahora = new Date();
+            var hora = ahora.getHours();
+            var minutos = ahora.getMinutes();
+            var segundos = ahora.getSeconds();
+
+            // Agrega un cero delante de la hora si es menor a 10
+            hora = (hora < 10 ? "0" : "") + hora;
+            // Agrega un cero delante de los minutos si es menor a 10
+            minutos = (minutos < 10 ? "0" : "") + minutos;
+            // Agrega un cero delante de los segundos si es menor a 10
+            segundos = (segundos < 10 ? "0" : "") + segundos;
+
+            var fecha = ahora.toLocaleDateString();
+            var tiempo = hora + ":" + minutos + ":" + segundos;
+
+        document.getElementById("fecha-hora").innerText = "Fecha: " + fecha + " - Hora: " + tiempo;
+
+                // Actualiza cada segundo
+                setTimeout(actualizarFechaHora, 1000);
+                }
+                // Llama a la función para iniciar la actualización
+                actualizarFechaHora();
+    </script>
 </body>
 </html>
+
