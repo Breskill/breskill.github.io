@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redireccionando...</title>
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Redireccionar a tu página principal -->
-    <script>
-        // Redirigir a inicio.php
-        window.location.href = "http://breskill.github.io/Vista/inicio.php";
-    </script>
-    <!-- Enlace alternativo en caso de que la redirección no funcione -->
-    <a href="http://breskill.github.io/Vista/inicio.php">Ir a la página principal</a>
+    <header>
+        <div class="logo">Mi Logo</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="inicio" class="hero">
+        <h1>Bienvenido a Mi Página Web</h1>
+        <p>Tu solución ideal para todo lo que necesitas.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Mi Página Web. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
